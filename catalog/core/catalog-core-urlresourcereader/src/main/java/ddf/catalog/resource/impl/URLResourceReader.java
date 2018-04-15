@@ -570,6 +570,9 @@ public class URLResourceReader implements ResourceReader {
     }
 
     WebClient.getConfig(client).getHttpConduit().getClient().setAutoRedirect(getFollowRedirects());
+    WebClient.getConfig(client)
+        .getRequestContext()
+        .put("http.redirect.relative.uri", getFollowRedirects());
     return client;
   }
 
