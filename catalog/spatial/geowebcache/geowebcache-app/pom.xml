@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.codice.ddf.spatial</groupId>
         <artifactId>geowebcache</artifactId>
-        <version>2.11.6.EC-SNAPSHOT</version>
+        <version>2.11.6.EC</version>
     </parent>
 
     <artifactId>geowebcache-app</artifactId>
