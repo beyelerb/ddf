@@ -23,6 +23,7 @@ import org.apache.cxf.phase.AbstractPhaseInterceptor;
 import org.apache.cxf.phase.Phase;
 import org.apache.cxf.transport.http.AbstractHTTPDestination;
 import org.codice.ddf.security.handler.pki.CrlChecker;
+import org.codice.ddf.security.ocsp.OcspService;
 
 /**
  * Interceptor that checks an incoming message against a defined certification revocation list
@@ -31,6 +32,8 @@ import org.codice.ddf.security.handler.pki.CrlChecker;
 public class CrlInterceptor extends AbstractPhaseInterceptor<Message> {
 
   private CrlChecker crlChecker;
+
+  protected OcspService ocspService;
 
   /**
    * Creates a new crl interceptor. Loads in a CRL from the CRL file pointed to by the

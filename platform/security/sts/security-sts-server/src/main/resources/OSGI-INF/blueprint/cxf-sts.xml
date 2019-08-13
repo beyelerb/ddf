@@ -161,11 +161,13 @@
         <property name="tokenStore" ref="defaultTokenStore"/>
     </bean>
 
+    <reference id="ocspService" interface="org.codice.ddf.security.OcspService"/>
+
     <bean id="crlInterceptor" class="org.codice.ddf.security.sts.crl.CrlInterceptor">
         <argument>
             <bean class="org.codice.ddf.security.handler.pki.CrlChecker"></bean>
         </argument>
-    </bean>
+        <property name="ocspService" ref="ocspService"/>    </bean>
 
     <bean id="SubjectDNConstraintsInterceptor"
           class="ddf.security.sts.SubjectDNConstraintsInterceptor">
